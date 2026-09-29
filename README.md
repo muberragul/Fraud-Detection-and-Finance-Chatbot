@@ -1,29 +1,49 @@
-# Auto Loan Chatbot Demo Using Llama 3
+# Fintech AI Projects Portfolio
 
-## Görev: Araç Finansmanı Chatbot Tasarım
+This portfolio contains two applied AI projects in the financial domain: a fraud detection system and an auto-financing chatbot.
 
-**Senaryo Açıklaması:** Müşteriler mobil uygulama tarafından sunulan sohbet robotu yardımıyla bankamızda taşıt finansmanı ön başvurusu yapacaktır. Taşıt finansmanı yeni veya 2. (ikinci) el araçlar için yapılacaktır. Müşteriden alınması gereken bilgiler ve bu bilgilerin sağlaması gereken kriterler araç finansmanı türüne göre aşağıdaki gibidir:
+## 1) Fraud Detection with Machine Learning
 
-**Yeni Taşıt Finansmanı için:**
+This project focuses on detecting fraudulent bank transactions using a highly imbalanced dataset.
 
-- Araç proforma fatura değeri (7M üzeri araçlar için başvuru yapılamaz)
-- Araç modeli (Ticari Modeller için başvuru yapılamaz)
-- Kefil TCKN (Araç Fiyatı 5M ve üzeri olan başvurular için gereklidir. Diğer durumlar kefil gerektirmez)
-- İstenen finansman tutarı (Araç Fiyatının en fazla %60’u talep edilebilir)
+Key models used:
+- Logistic Regression
+- Random Forest
+- XGBoost
+- Balanced Random Forest
+- Soft Voting Ensemble (LR + RF + XGB)
 
-**İkinci El Finansmanı için:**
+Key technologies used:
+- Python
+- Jupyter Notebook
+- pandas, NumPy
+- scikit-learn
+- XGBoost
+- Flask REST API
 
-- Araç kasko değeri
-- Araç Yaşı (5 yaş üstü araçlar için başvuru oluşturulamaz)
-- İstenen finansman tutarı (Araç Kasko değerinin en fazla %40’ı veya üst barem olan 3M turarını aşamaz)
-- Satıcı T.C. kimlik numarası (Bu alan zorunlu değildir. Boş bırakılabilir.)
+Important highlights:
+- Performed data cleaning, feature engineering, outlier analysis, and scaling
+- Addressed class imbalance using business-aware modeling and evaluation
+- Compared multiple models using Precision, Recall, F1-score, and ROC-AUC
+- Selected an ensemble model to balance fraud detection performance and false positives
+- Deployed the final model as a REST API for real-world use
 
-Bu kapsamda chatbot’umuz müşterinin araç finansmanı türünü (yeni veya ikinci el) netleştirecek, sonrasında da araç finansmanı türüne göre alması gereken bilgileri toplayacak ve bu bilgilerin sağlaması gereken koşulları kontrol edecektir. Tasarlanan chatbot müşterilerin kişisel bilgilerini banka dışına çıkarmadan çalışmalıdır. Süreci başarıyla ilerleyen müşteriler için toplanan bilgiler son kez müşteriye teyit ettirilecektir. Müşteri bu bilgileri güncelleyebilecektir. Sonrasında ise chatbot tarafından veri tabanına ön başvuru kaydı atılması sağlanacaktır.
 
-Ayrıca kurumda araç finansmanı ile ilgili sıkça sorulan sorular derlenip süreci anlatan bir doküman haline getirilmiştir. Chatbot’un bu dokümanı kullanarak müşterinin araç finansmanıyla ilgili olası sorularını yanıtlayabilmesi de beklenmektedir.
+## 2) Auto Loan Finance Chatbot
 
-Taşıt finansmanı ön başvurusunu başarıyla yapan müşteriler için çapraz satış politikası kapsamında HGS ürünü isteyip istemediği de sorulacaktır.
+This project is a conversational banking assistant that helps customers complete auto-financing applications and answer financing-related questions.
 
-Yerel sunucularımız üzerinde kurulu 2 adet her biri 48 GB olacak şekilde toplam 96 GB GPU kaynağımız mevcuttur.
+Key models and technologies used:
+- Llama 3
+- Open-source LLM deployment
+- Python
+- Local GPU infrastructure
+- Conversational UI / chatbot workflow
+- Business-rule-driven application logic
 
-Bu chatbot’u bulutta yer alan veya yerel’e indirilen açık kaynaklı büyük dil modelleriyle geliştirebilirsiniz.
+Important highlights:
+- Guides customers through new vs. used vehicle financing flows
+- Collects required information based on product type and validation rules
+- Uses business documentation to answer common financing questions
+- Includes cross-sell logic for HGS product offers
+- Built to support a realistic fintech customer journey
